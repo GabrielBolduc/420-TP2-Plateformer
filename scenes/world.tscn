@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=4 uid="uid://c766fl78o0cjk"]
 
-[ext_resource type="PackedScene" uid="uid://co806t5p15df4" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://cpvia5a7lrl2g" path="res://assets/sprites/platforms.png" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://cya8iix2ud0fh" path="res://scenes/Player.tscn" id="3_4wyf3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rwgxs"]
 texture = ExtResource("2_rwgxs")
@@ -26,10 +26,9 @@ sources/0 = SubResource("TileSetAtlasSource_rwgxs")
 
 [node name="World" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_nnsk1")]
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAACAAAAAAAIAAAAAAABAAAAAAAJAAAAAAACAAAAAAAKAAAAAAABAAAAAAALAAAAAAACAAAAAAAMAAAAAAABAAAAAAANAAAAAAACAAAAAAAOAAAAAAABAAAAAAAPAAAAAAACAAAAAAAUAAAAAAABAAAAAAAVAAAAAAACAAAAAAAXAAAAAAACAAAAAAAYAAAAAAACAAAAAAAWAAAAAAABAAAAAAAZAAAAAAABAAAAAAAaAAAAAAACAAAAAAAbAAAAAAABAAAAAAAcAAAAAAACAAAAAAARAAAAAAABAAAAAAASAAAAAAACAAAAAAA=")
 tile_set = SubResource("TileSet_4wyf3")
+
+[node name="Player" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(44, -15)
