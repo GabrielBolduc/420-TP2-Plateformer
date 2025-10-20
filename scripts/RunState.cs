@@ -63,5 +63,12 @@ public partial class RunState : PlayerState
             _stateMachine.TransitionTo("Idle");
         }
 
+        if (!_player.IsOnFloor())
+        {
+            _stateMachine.TransitionTo("Fall");
+            return;
+        }
+
+
     }
 }
