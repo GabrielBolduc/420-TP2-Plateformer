@@ -6,7 +6,6 @@ public partial class AttackState : PlayerState
 {
     public override void Enter(Dictionary<string, bool> message = null)
     {
-        GD.Print("Entering : " + GetType().Name);
 
         if (_player.animPlayer != null)
         {

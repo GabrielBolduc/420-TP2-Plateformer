@@ -37,9 +37,15 @@ public partial class JumpState : PlayerState
             _hasJumped = false;
 
             if (Mathf.Abs(inputDirectionX) > 0.1f)
+            {
                 _stateMachine.TransitionTo("Run");
+            }
+
             else
+            {
                 _stateMachine.TransitionTo("Idle");
+            }
+                
         }
 
         if (inputDirectionX > 0)

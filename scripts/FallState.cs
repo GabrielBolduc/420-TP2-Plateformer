@@ -6,7 +6,6 @@ public partial class FallState : PlayerState
 {
     public override void Enter(Dictionary<string, bool> message = null)
     {
-        GD.Print("Entering : " + GetType().Name);
 
         _player.Motion.Y = 0;
 

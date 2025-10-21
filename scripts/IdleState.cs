@@ -12,7 +12,6 @@ public partial class IdleState : PlayerState
         {
             _player.animPlayer.Play("Idle");
         }
-        GD.Print("Entering : " + GetType().Name);
     }
 
     public override void PhysicsUpdate(float delta)

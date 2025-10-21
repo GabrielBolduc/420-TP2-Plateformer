@@ -20,11 +20,12 @@ public partial class StateMachine : Node
         foreach (State child in GetChildren())
         {
             if (child != null)
+            {
                 child._stateMachine = this;
+            }
         }
 
         State.Enter();
-        GD.Print("StateMachine: Ready with initial state " + State.Name);
     }
 
     public override void _UnhandledInput(InputEvent @event)

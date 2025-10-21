@@ -6,9 +6,6 @@ public partial class RunState : PlayerState
     // Méthode appelée à l'entrée de l'état Run
     public override void Enter(Dictionary<string, bool> message = null)
     {
-        GD.Print("Entering : " + GetType().Name);
-
-        // Joue l'animation "Run"
         _player.animPlayer.Play("Run");
     }
 
