@@ -11,8 +11,10 @@ public partial class PlayerState : State
         base._Ready();
         _player = Owner as Player;
         if (_player == null)
+        {
             throw new InvalidProgramException("Player is null in PlayerState type check.");
-
+        }
+            
         GD.Print("PlayerState: Ready -> " + GetType().Name);
     }
 }

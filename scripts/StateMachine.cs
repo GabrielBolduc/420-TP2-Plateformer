@@ -17,7 +17,6 @@ public partial class StateMachine : Node
 
         State = GetNode<State>(InitialState);
 
-        // assigner la state machine à tous les enfants de type State
         foreach (State child in GetChildren())
         {
             if (child != null)

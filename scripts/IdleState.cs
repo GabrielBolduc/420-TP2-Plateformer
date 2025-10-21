@@ -12,23 +12,31 @@ public partial class IdleState : PlayerState
         {
             _player.animPlayer.Play("Idle");
         }
-
         GD.Print("Entering : " + GetType().Name);
     }
 
     public override void PhysicsUpdate(float delta)
     {
         _player.Motion = _player.Motion.Lerp(Vector2.Zero, 0.2f);
+
         _player.Velocity = _player.Motion;
 
-        // Passage à Run si input horizontal
         if (Input.IsActionPressed("droite") || Input.IsActionPressed("gauche"))
         {
             _stateMachine.TransitionTo("Run");
             return;
         }
 
-        // Passage à Attack si input attaque
+        if (Input.IsActionJustPressed("ui_jump"))
+        {
+            var message = new Dictionary<string, bool>()
+            {
+                { "doJump", true }
+            };
+            _stateMachine.TransitionTo("Jump", message);
+            return;
+        }
+
         if (Input.IsActionJustPressed("ui_attack"))
         {
             _stateMachine.TransitionTo("Attack");

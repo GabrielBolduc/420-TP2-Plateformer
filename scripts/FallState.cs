@@ -26,10 +26,15 @@ public partial class FallState : PlayerState
         if (_player.IsOnFloor())
         {
             float horiz = Input.GetActionStrength("droite") - Input.GetActionStrength("gauche");
-            if (Mathf.Abs(horiz) > 0.1f)
-                _stateMachine.TransitionTo("Run");
-            else
-                _stateMachine.TransitionTo("Idle");
+			if (Mathf.Abs(horiz) > 0.1f)
+			{
+				_stateMachine.TransitionTo("Run");
+			}
+
+			else
+			{
+				_stateMachine.TransitionTo("Idle");
+			}	
         }
     }
 }
